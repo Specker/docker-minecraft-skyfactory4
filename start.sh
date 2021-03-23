@@ -133,7 +133,7 @@ if [[ -n "$OPS" ]]; then
     echo $OPS | awk -v RS=, '{print}' >> ops.txt
 fi
 if [[ -n "$PRESTIGE" ]]; then
-    sed -i "/B:"+"Prestige Enabled Default"+"\s*=/ c B:"+"Prestige Enabled Default"+"=$PRESTIGE" /data/server.properties
+    sed -i "/B:"+"Prestige Enabled Default"+"\s*=/ c B:"+"Prestige Enabled Default"+"=$PRESTIGE" /data/config/prestige.cfg
 fi
 
 #java $JVM_OPTS -jar forge-*-universal.jar nogui
