@@ -4,12 +4,15 @@ set -e
 
 cd /data
 
+mkdir configCopy
+
 cp -rf ./config/* ./configCopy/*
 
 cp -rf /tmp/feed-the-beast/* .
 echo "eula=true" > eula.txt
 
 cp -rf ./configCopy/* ./config/*
+
 
 if [[ ! -e server.properties ]]; then
     cp /tmp/server.properties .
