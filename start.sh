@@ -4,7 +4,7 @@ set -e
 
 cd /data
 
-mkdir configCopy
+mkdir -p configCopy
 
 cp -rf ./config/* ./configCopy/*
 
