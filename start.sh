@@ -134,6 +134,7 @@ if [[ -n "$OPS" ]]; then
 fi
 if [[ -n "$PRESTIGE" ]]; then
     sed -i "/B:"+"Prestige Enabled Default"+"\s*=/ c B:"+"Prestige Enabled Default"+"=$PRESTIGE" /data/server.properties
+fi
 
 #java $JVM_OPTS -jar forge-*-universal.jar nogui
 java $JVM_OPTS -jar forge-1.12.2-14.23.5.2854.jar nogui
