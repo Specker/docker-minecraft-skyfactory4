@@ -13,6 +13,7 @@ echo "eula=true" > eula.txt
 
 cp -rf ./configCopy/* ./config/
 
+rm -rf ./configCopy/
 
 if [[ ! -e server.properties ]]; then
     cp /tmp/server.properties .
