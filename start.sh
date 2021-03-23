@@ -4,8 +4,12 @@ set -e
 
 cd /data
 
+cp -rf ./config/* ./configCopy/*
+
 cp -rf /tmp/feed-the-beast/* .
 echo "eula=true" > eula.txt
+
+cp -rf ./configCopy/* ./config/*
 
 if [[ ! -e server.properties ]]; then
     cp /tmp/server.properties .
@@ -131,9 +135,6 @@ if [[ -n "$MOTD" ]]; then
 fi
 if [[ -n "$OPS" ]]; then
     echo $OPS | awk -v RS=, '{print}' >> ops.txt
-fi
-if [[ -n "$PRESTIGE" ]]; then
-    sed -i "/B:"+"Prestige Enabled Default"+"\s*=/ c B:"+"Prestige Enabled Default"+"=$PRESTIGE" /data/config/prestige.cfg
 fi
 
 #java $JVM_OPTS -jar forge-*-universal.jar nogui
